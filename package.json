@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --progress --colors",
+    "deploy": "node ./scripts/deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Douglas Maitelli",
@@ -22,5 +23,8 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
