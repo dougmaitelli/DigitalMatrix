@@ -9,3 +9,18 @@ body {
   position: absolute;
   font-weight: bold;
 }
+
+.glow {
+  -webkit-animation: glow 1s alternate;
+  -moz-animation: glow 1s alternate;
+  animation: glow 1s alternate;
+  -webkit-animation-iteration-count: 2;
+  -moz-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+}
+
+@-webkit-keyframes glow {
+  to {
+    opacity: 1;
+  }
+}
