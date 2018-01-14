@@ -1,19 +1,22 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/js/app.js',
+  entry: {
+    "lib/digitalmatrix": "./src/js/digitalmatrix.js",
+    "app.bundle": "./src/js/app.js",
+    "app.bundle.min": "./src/js/app.js"
+  },
+  devtool: "source-map",
   output: {
-    path: __dirname + '/build',
-    filename: 'app.bundle.js'
+    path: __dirname + "/build",
+    filename: "[name].js"
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
-        ]
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
@@ -23,22 +26,27 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['env']
+            presets: ["env"]
           }
         }
       }
     ]
   },
   plugins: [
+    /*new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true
+    }),*/
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      chunks: ["app.bundle.min"],
+      template: "./src/index.html"
     })
   ],
   devServer: {
     inline: true
   }
-}
+};

@@ -1,7 +1,7 @@
 import "../css/style.css";
 
 import $ from "jquery";
-import Matrix from "../../index.js";
+import Matrix from "./digitalmatrix.js";
 
 $(document).ready(() => {
   Matrix.generateNumbers(".matrix");
