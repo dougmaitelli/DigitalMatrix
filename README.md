@@ -2,12 +2,12 @@
 
 ![npm](https://img.shields.io/npm/v/digitalmatrix.svg) ![license](https://img.shields.io/npm/l/digitalmatrix.svg) ![github-issues](https://img.shields.io/github/issues/dougmaitelli/DigitalMatrix.svg)
 
+![nodei.co](https://nodei.co/npm/digitalmatrix.png?downloads=true&downloadRank=true&stars=true)
+
 Creates a "Digital Matrix" effect inside HTML elements:
 [Demo](https://dougmaitelli.github.io/DigitalMatrix/)
 
 ![demo](https://raw.githubusercontent.com/dougmaitelli/DigitalMatrix/master/demo.png)
-
-![nodei.co](https://nodei.co/npm/digitalmatrix.png?downloads=true&downloadRank=true&stars=true)
 
 ## Install
 
