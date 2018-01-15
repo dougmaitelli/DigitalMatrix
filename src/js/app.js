@@ -1,15 +1,17 @@
 import "../css/style.css";
 
 import $ from "jquery";
-import Matrix from "./digitalmatrix.js";
+import DigitalMatrix from "./digitalmatrix.js";
 
 $(document).ready(() => {
-  Matrix.generateNumbers(".matrix");
+  var matrix = new DigitalMatrix();
+
+  matrix.generateNumbers(".matrix");
 
   $(window).resize(() => {
     $(".matrix").empty();
-    Matrix.generateNumbers(".matrix");
+    matrix.generateNumbers(".matrix");
   });
 
-  Matrix.startPulsate();
+  matrix.startPulsate();
 });

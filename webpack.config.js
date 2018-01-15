@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = [
   {
     entry: {
-      "digitalmatrix": "./src/js/digitalmatrix.js",
+      digitalmatrix: "./src/js/digitalmatrix.js",
       "digitalmatrix.min": "./src/js/digitalmatrix.js"
     },
     devtool: "source-map",
@@ -12,7 +12,7 @@ module.exports = [
       path: __dirname + "/lib",
       filename: "[name].js",
       library: "digitalmatrix",
-      libraryTarget: 'umd',
+      libraryTarget: "umd",
       umdNamedDefine: true
     },
     module: {
