@@ -1,9 +1,10 @@
-import $ from "jquery";
 import Rainbow from "rainbowvis.js";
 
 export default class DigitalMatrix {
-  constructor(element) {
-    this.generateNumbers(element);
+  constructor(elementId) {
+    this.matrixElement = document.getElementById(elementId);
+
+    this.regenerateNumbers();
   }
 
   _getRandomInt(min, max) {
@@ -30,14 +31,21 @@ export default class DigitalMatrix {
   }
 
   _pulsate() {
-    this._shuffle($(".number"))
-      .slice(0, $(".number").length / 20)
-      .toggleClass("glow");
+    let numbers = Array.prototype.slice.call(
+      this.matrixElement.getElementsByClassName("number"),
+      0
+    );
+
+    let selectedNumbers = this._shuffle(numbers).slice(0, numbers.length / 20);
+
+    selectedNumbers.forEach(nElement => {
+      nElement.className = nElement.className.length ? "glow" : "";
+    });
   }
 
-  generateNumbers(element) {
-    let docWidth = $(element).width();
-    let docHeight = $(element).height();
+  regenerateNumbers() {
+    let docWidth = this.matrixElement.offsetWidth;
+    let docHeight = this.matrixElement.offsetHeight;
 
     let nWidth = 25;
     let nHeight = 20;
@@ -59,20 +67,25 @@ export default class DigitalMatrix {
         let opacity = Math.random();
 
         if (Math.random() < 0.7 && opacity > 0.1) {
-          let n = $("<div/>")
-            .text(
+          let nElement = document.createElement("div");
+          nElement.appendChild(
+            document.createTextNode(
               ("00" + this._getRandomInt(0, 255).toString(16))
                 .toUpperCase()
                 .slice(-2)
             )
-            .addClass("number")
-            .css({
-              left: x * nWidth + "px",
-              top: y * nHeight + "px",
-              color: "#" + rainbow.colourAt(x),
-              opacity: opacity
-            });
-          n.appendTo(element);
+          );
+
+          nElement.className = "number";
+
+          nElement.style.position = "absolute";
+          nElement.style.left = x * nWidth + "px";
+          nElement.style.top = y * nHeight + "px";
+          nElement.style.color = "#" + rainbow.colourAt(x);
+          nElement.style.opacity = opacity;
+          nElement.style.fontWeight = "bold";
+
+          this.matrixElement.appendChild(nElement);
         }
 
         y++;
