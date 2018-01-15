@@ -2,7 +2,7 @@
   "name": "digitalmatrix",
   "version": "1.0.0",
   "description": "DigitalMatrix",
-  "main": "build/lib/digitalmatrix.js",
+  "main": "lib/digitalmatrix.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --progress --colors",
