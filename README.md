@@ -5,6 +5,8 @@
 Creates a "Digital Matrix" effect inside HTML elements:
 [Demo](https://dougmaitelli.github.io/DigitalMatrix/)
 
+![demo](https://raw.githubusercontent.com/dougmaitelli/DigitalMatrix/master/demo.png)
+
 ![nodei.co](https://nodei.co/npm/digitalmatrix.png?downloads=true&downloadRank=true&stars=true)
 
 ## Install
