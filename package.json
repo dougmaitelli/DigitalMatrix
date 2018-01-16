@@ -1,6 +1,6 @@
 {
   "name": "digitalmatrix",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "DigitalMatrix",
   "repository": "https://github.com/dougmaitelli/DigitalMatrix",
   "main": "lib/digitalmatrix.js",

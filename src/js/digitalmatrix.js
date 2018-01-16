@@ -43,7 +43,7 @@ export default class DigitalMatrix {
 
     selectedNumbers.forEach(nElement => {
       nElement.className =
-        nElement.className.length == "number" ? "number glow" : "number";
+        nElement.className == "number" ? "number glow" : "number";
     });
   }
 
