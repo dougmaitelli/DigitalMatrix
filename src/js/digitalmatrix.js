@@ -1,8 +1,11 @@
+import "../css/lib.css";
+
 import Rainbow from "rainbowvis.js";
 
 export default class DigitalMatrix {
   constructor(elementId) {
     this.matrixElement = document.getElementById(elementId);
+    this.matrixElement.className = "matrix";
 
     this.regenerateNumbers();
   }
@@ -78,12 +81,10 @@ export default class DigitalMatrix {
 
           nElement.className = "number";
 
-          nElement.style.position = "absolute";
           nElement.style.left = x * nWidth + "px";
           nElement.style.top = y * nHeight + "px";
           nElement.style.color = "#" + rainbow.colourAt(x);
           nElement.style.opacity = opacity;
-          nElement.style.fontWeight = "bold";
 
           this.matrixElement.appendChild(nElement);
         }

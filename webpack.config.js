@@ -18,6 +18,10 @@ module.exports = [
     module: {
       rules: [
         {
+          test: /\.css$/,
+          use: "css-loader"
+        },
+        {
           test: /\.js$/,
           exclude: /(node_modules)/,
           use: {
@@ -51,12 +55,6 @@ module.exports = [
         {
           test: /\.css$/,
           use: [{ loader: "style-loader" }, { loader: "css-loader" }]
-        },
-        {
-          test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-          use: {
-            loader: "url-loader"
-          }
         },
         {
           test: /\.js$/,
