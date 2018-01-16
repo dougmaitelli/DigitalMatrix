@@ -42,7 +42,8 @@ export default class DigitalMatrix {
     let selectedNumbers = this._shuffle(numbers).slice(0, numbers.length / 20);
 
     selectedNumbers.forEach(nElement => {
-      nElement.className = nElement.className.length ? "glow" : "";
+      nElement.className =
+        nElement.className.length == "number" ? "number glow" : "number";
     });
   }
 
