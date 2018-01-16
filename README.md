@@ -19,8 +19,9 @@ To generate the matrix:
 ```
 import DigitalMatrix from "digitalmatrix";
 
-var matrix = new DigitalMatrix("matrix");
+var matrix = new DigitalMatrix("elementId");
 ```
+Where "elementId" is the id of the element that will contain the matrix.
 
 To enable the pulsate effect:
 ```
