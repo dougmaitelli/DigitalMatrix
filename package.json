@@ -1,31 +1,23 @@
 {
   "name": "digitalmatrix",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "DigitalMatrix",
   "repository": "https://github.com/dougmaitelli/DigitalMatrix",
   "main": "lib/digitalmatrix.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --progress --colors",
-    "deploy": "node ./scripts/deploy.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production"
   },
   "author": "Douglas Maitelli",
   "license": "UNLICENSED",
-  "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.8",
-    "html-webpack-plugin": "^2.30.1",
-    "jquery": "^3.2.1",
-    "rainbowvis.js": "^1.0.1",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "rainbowvis.js": "^1.0.1",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^2.0.10"
   }
 }
