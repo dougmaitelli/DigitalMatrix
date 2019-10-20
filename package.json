@@ -1,12 +1,12 @@
 {
   "name": "digitalmatrix",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "DigitalMatrix",
   "repository": "https://github.com/dougmaitelli/DigitalMatrix",
   "main": "lib/digitalmatrix.min.js",
   "scripts": {
     "build": "webpack --mode production",
-		"release": "release-it"
+    "release": "release-it"
   },
   "author": "Douglas Maitelli",
   "license": "UNLICENSED",
@@ -23,9 +23,9 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
-	"release-it": {
-		"git": {
-			"tagName": "v${version}"
-		}
-	}
+  "release-it": {
+    "git": {
+      "tagName": "v${version}"
+    }
+  }
 }
