@@ -17,7 +17,7 @@ Creates a "Digital Matrix" effect inside HTML elements:
 
 To generate the matrix:
 ```
-import DigitalMatrix from "digitalmatrix";
+import DigitalMatrix from "DigitalMatrix";
 
 var matrix = new DigitalMatrix("elementId");
 ```
@@ -31,4 +31,9 @@ matrix.startPulsate();
 To regenerate the matrix:
 ```
 matrix.regenerateNumbers();
+```
+
+To resize the matrix:
+```
+matrix.resize();
 ```
