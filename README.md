@@ -5,7 +5,7 @@
 ![nodei.co](https://nodei.co/npm/digitalmatrix.png?downloads=true&downloadRank=true&stars=true)
 
 Creates a "Digital Matrix" effect inside HTML elements:
-[Demo](https://dougmaitelli.github.io/DigitalMatrix/)
+[Demo](https://dougmaitelli.github.io/bg-only.html)
 
 ![demo](https://raw.githubusercontent.com/dougmaitelli/DigitalMatrix/master/demo.png)
 
