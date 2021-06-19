@@ -1,5 +1,5 @@
 import P5 from "p5";
-import Rainbow from "rainbowvis.js";
+import * as Rainbow from "rainbowvis.js";
 
 import MatrixNumber from "./MatrixNumber";
 

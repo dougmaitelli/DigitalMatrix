@@ -5,13 +5,18 @@
   "repository": "https://github.com/dougmaitelli/DigitalMatrix",
   "author": "Douglas Maitelli",
   "license": "UNLICENSED",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/es2015/index.js",
+  "types": "dist/es2015/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "clean": "shx rm -rf dist",
+    "build": "npm run clean && npm run build:es2015 && npm run build:esm && npm run build:umd && npm run build:umd:min",
+    "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
+    "build:umd": "rollup -c rollup.config.js",
+    "build:umd:min": "cd dist/umd && uglifyjs --compress --mangle --source-map --comments -o digitalmatrix.min.js -- digitalmatrix.js",
     "release": "release-it"
   },
   "dependencies": {
@@ -19,9 +24,13 @@
     "rainbowvis.js": "^1.0.1"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@types/p5": "^0.9.1",
     "release-it": "^14.9.0",
-    "typescript": "^4.3.2"
+    "rollup": "^2.52.1",
+    "shx": "^0.3.3",
+    "typescript": "^4.3.2",
+    "uglify-js": "^3.13.9"
   },
   "release-it": {
     "git": {
