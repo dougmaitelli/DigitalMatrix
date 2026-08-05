@@ -14,23 +14,26 @@
     "clean": "shx rm -rf dist",
     "build": "npm run clean && npm run build:es2015 && npm run build:esm && npm run build:umd && npm run build:umd:min",
     "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
-    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
-    "build:umd": "rollup -c rollup.config.js",
+    "build:esm": "tsc --module es2015 --target es2017 --outDir dist/esm",
+    "build:umd": "rollup -c rollup.config.mjs",
     "build:umd:min": "cd dist/umd && uglifyjs --compress --mangle --source-map --comments -o digitalmatrix.min.js -- digitalmatrix.js",
+    "build:demo": "npm run build && npm run copy:demo",
+    "copy:demo": "shx mkdir -p dist/vendor && shx cp demo/index.html dist/index.html && shx cp node_modules/p5/lib/p5.min.js dist/vendor/p5.min.js",
     "release": "release-it"
   },
   "dependencies": {
-    "p5": "^1.3.1",
-    "rainbowvis.js": "^1.0.1"
+    "p5": "^2.3.2",
+    "rainbowvis.js": "^1.1.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
-    "@types/p5": "^0.9.1",
+    "@types/p5": "^1.7.7",
     "release-it": "^21.0.1",
-    "rollup": "^2.52.1",
-    "shx": "^0.3.3",
-    "typescript": "^4.3.2",
-    "uglify-js": "^3.13.9"
+    "rollup": "^4.62.4",
+    "shx": "^0.4.0",
+    "typescript": "^7.0.2",
+    "uglify-js": "^3.19.3"
   },
   "release-it": {
     "git": {

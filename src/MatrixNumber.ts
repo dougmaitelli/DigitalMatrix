@@ -9,7 +9,7 @@ export default class MatrixNumber {
     private color: string;
     private opacity: number;
 
-    private pulsateStart: number;
+    private pulsateStart: number | null = null;
 
     constructor(p5: P5, x: number, y: number, value: string, color: string, opacity: number) {
         this.p5 = p5;

@@ -1,15 +1,19 @@
 import P5 from "p5";
-import * as Rainbow from "rainbowvis.js";
+import Rainbow from "rainbowvis.js";
 
 import MatrixNumber from "./MatrixNumber";
 
 export default class DigitalMatrix {
   private matrixElement: HTMLElement;
   private p5: P5;
-  private numbers: MatrixNumber[];
+  private numbers: MatrixNumber[] = [];
 
   constructor(elementId: string) {
-    this.matrixElement = document.getElementById(elementId);
+    const matrixElement = document.getElementById(elementId);
+    if (!matrixElement) {
+      throw new Error(`Element with id "${elementId}" was not found.`);
+    }
+    this.matrixElement = matrixElement;
 
     const sketch = (p5: P5) => {
       p5.setup = () => {
